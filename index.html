@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Device Redirect</title>
+    <script>
+        // Function to detect user agent and redirect accordingly
+        function redirectToAppropriateURL() {
+            var userAgent = navigator.userAgent.toLowerCase();
+
+            if (userAgent.indexOf('android') > -1) {
+                // Redirect for Android devices
+                window.location.replace("https://play.google.com/store/apps/details?id=com.halfblind.kukufatos");
+            } else if (userAgent.indexOf('iphone') > -1 || userAgent.indexOf('ipad') > -1 || userAgent.indexOf('ipod') > -1) {
+                // Redirect for iOS devices
+                window.location.replace("https://apps.apple.com/us/app/id6447484162");
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = redirectToAppropriateURL;
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="https://play.google.com/store/apps/details?id=com.halfblind.kukufatos">click here</a>.</p>
+</body>
+</html>
